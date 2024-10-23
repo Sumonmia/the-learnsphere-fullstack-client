@@ -11,6 +11,10 @@ import CourseDetails from "../CourseDetails";
 import PrivateRoute from "./PrivateRoute";
 import { HelmetProvider } from "react-helmet-async";
 import DashboradLayout from "../layout/DashboradLayout";
+import UserProfile from "../pages/dashboardpages/UserProfile";
+import AllusersPage from "../pages/dashboardpages/AllusersPage";
+import AllCoursesAtDashboard from "../pages/dashboardpages/AllCoursesAtDashboard";
+import CourseCategories from "../pages/dashboardpages/CourseCategories";
 
   const routes = createBrowserRouter([
     {
@@ -49,7 +53,27 @@ import DashboradLayout from "../layout/DashboradLayout";
       path: "/dashboard",
       element: <DashboradLayout></DashboradLayout>,
       children: [
+        {
+          path: "",
+          element: <UserProfile></UserProfile>,
+        },
+        {
+          path: "profile",
+          element: <UserProfile></UserProfile>,
+        },
+        {
+          path: "allusers",
+          element: <AllusersPage></AllusersPage>,
+        },
 
+        {
+          path: "allcourses",
+          element: <AllCoursesAtDashboard></AllCoursesAtDashboard>,
+        },
+        {
+          path: "allcategories",
+          element: <CourseCategories></CourseCategories>
+        },
       ],
     },
   ]);

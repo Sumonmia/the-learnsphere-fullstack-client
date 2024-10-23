@@ -22,9 +22,9 @@ const DashboardSidebarContent = () => {
     };
 
     return (
-        <div className="p-4  bg-gray-400">
+        <div className="p-4  bg-gray-400 lg:max-w-40 min-h-screen rounded-md shadow-lg">
             {/* User Profile Info */}
-            <div className="flex flex-col lg:flex-col items-start gap-2">
+            <div className="flex flex-col lg:flex-col items-center gap-2">
                 <img
                     src={user?.photoURL}
                     alt="User Profile"
