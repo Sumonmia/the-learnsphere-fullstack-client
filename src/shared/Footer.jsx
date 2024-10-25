@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
     return (
-        <div>
-            <div className="mt-10 rounded-md">
+        <div className="rounded-md">
+            <div className="mt-10">
                 <footer className="footer bg-base-200 text-base-content p-10">
                     <aside>
                         <Link to="/"><h3 className="text-2xl font-bold text-red-600">LearnSphere</h3></Link>

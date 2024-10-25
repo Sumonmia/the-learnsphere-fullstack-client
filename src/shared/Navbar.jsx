@@ -59,6 +59,7 @@ const Navbar = () => {
         {
           user ? (
             <div className="navbar-end gap-2">
+              <div className="text-green-800">{user.displayName}</div>
               <Link to="/dashboard" title="Dashboard">
                 <MdSpaceDashboard className="w-10 h-10 mr-5" />
               </Link>

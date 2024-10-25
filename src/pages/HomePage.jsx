@@ -1,11 +1,9 @@
 import { Helmet } from "react-helmet-async"
-import AboutUs from "../components/AboutUs"
 import Banner from "../components/Banner"
-import ContactUs from "../components/ContactUs"
 import CourseImage from "../components/CourseImage"
-import HowitWorks from "../components/HowitWorks"
 import Footer from "../shared/Footer"
 import Navbar from "../shared/Navbar"
+import CourseCategoryCard from "../components/CourseCategoryCard"
 
 
 
@@ -18,10 +16,8 @@ const HomePage = () => {
       <div>
         <Navbar></Navbar>
         <Banner></Banner>
-        <AboutUs></AboutUs>
+        <CourseCategoryCard></CourseCategoryCard>
         <CourseImage></CourseImage>
-        <HowitWorks></HowitWorks>
-        <ContactUs></ContactUs>
         <Footer></Footer>
       </div>
     </>

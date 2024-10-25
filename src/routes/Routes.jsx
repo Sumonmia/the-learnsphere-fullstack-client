@@ -17,6 +17,8 @@ import AllCoursesAtDashboard from "../pages/dashboardpages/AllCoursesAtDashboard
 import CourseCategories from "../pages/dashboardpages/CourseCategories";
 import AddaCourse from "../pages/dashboardpages/AddaCourse";
 import EditCourse from "../pages/dashboardpages/EditCourse";
+import AddCategory from "../pages/dashboardpages/AddCategory";
+import CourseCategoryCard from "../components/CourseCategoryCard";
 
 const routes = createBrowserRouter([
   {
@@ -28,10 +30,17 @@ const routes = createBrowserRouter([
         element: <HomePage></HomePage>,
       },
       {
+        path: "/courseCategories",
+        element:
+          <CourseCategoryCard></CourseCategoryCard>,
+        loader: () => fetch("http://localhost:5000/courseCategories"),
+      },
+
+      {
         path: "/courses",
         element:
           <AllCourses></AllCourses>,
-        loader: () => fetch(`https://bootcamp-courseselling-web-server.vercel.app/courses`),
+        loader: () => fetch("http://localhost:5000/courses"),
       },
       {
         path: "/courses/:id",
@@ -40,7 +49,7 @@ const routes = createBrowserRouter([
             <CourseDetails></CourseDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`https://bootcamp-courseselling-web-server.vercel.app/courses/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
       },
       {
         path: "/login",
@@ -85,8 +94,14 @@ const routes = createBrowserRouter([
       },
       {
         path: "allcategories",
-        element: <CourseCategories></CourseCategories>
+        element: <CourseCategories></CourseCategories>,
+        loader: ()=> fetch("http://localhost:5000/courseCategories"),
       },
+      {
+        path: "addcategory",
+        element: <AddCategory></AddCategory>,
+      },
+
     ],
   },
 ]);
