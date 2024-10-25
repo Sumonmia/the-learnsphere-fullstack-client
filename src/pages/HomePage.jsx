@@ -4,6 +4,7 @@ import CourseImage from "../components/CourseImage"
 import Footer from "../shared/Footer"
 import Navbar from "../shared/Navbar"
 import CourseCategoryCard from "../components/CourseCategoryCard"
+import Faq from "../components/Faq"
 
 
 
@@ -18,6 +19,7 @@ const HomePage = () => {
         <Banner></Banner>
         <CourseCategoryCard></CourseCategoryCard>
         <CourseImage></CourseImage>
+        <Faq></Faq>
         <Footer></Footer>
       </div>
     </>

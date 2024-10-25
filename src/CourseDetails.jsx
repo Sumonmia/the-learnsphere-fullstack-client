@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useParams } from "react-router-dom"
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom"
 import Navbar from "./shared/Navbar";
 import Footer from "./shared/Footer";
 import toast from "react-hot-toast";
@@ -9,6 +9,7 @@ import { AuthContext } from "./provider/AuthProvider";
 const CourseDetails = () => {
     const { user } = useContext(AuthContext);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const navigate = useNavigate();
     const courseDetails = useLoaderData();
     const { id } = useParams();
     console.log(id);
@@ -63,8 +64,8 @@ const CourseDetails = () => {
             toast.success("Congratulations!! You have Purchased this course",{
                 position: "top-right",
             })
+            navigate("/courses");
           };
-
         // Open the edit modal with the user's current details
         const handleOpenEditModal = () => {
             setFormData({

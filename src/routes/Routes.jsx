@@ -19,6 +19,7 @@ import AddaCourse from "../pages/dashboardpages/AddaCourse";
 import EditCourse from "../pages/dashboardpages/EditCourse";
 import AddCategory from "../pages/dashboardpages/AddCategory";
 import CourseCategoryCard from "../components/CourseCategoryCard";
+import UserPurchaseHistory from "../pages/dashboardpages/UserPurchaseHistory";
 
 const routes = createBrowserRouter([
   {
@@ -72,6 +73,11 @@ const routes = createBrowserRouter([
       {
         path: "profile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "userlogs",
+        element: <UserPurchaseHistory></UserPurchaseHistory>,
+        loader: ()=> fetch("http://localhost:5000/userlogs"),
       },
       {
         path: "allusers",

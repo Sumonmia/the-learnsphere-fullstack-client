@@ -10,11 +10,12 @@ import {
 } from "react-icons/fa";
 import { PiBooks } from "react-icons/pi";
 import { TbCategory } from "react-icons/tb";
+import { MdWorkHistory } from "react-icons/md";
 
 const DashboardSidebarContent = () => {
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
-    console.log({ user })
+    // console.log({ user })
 
     const handleLogout = () => {
         logOut();
@@ -46,6 +47,17 @@ const DashboardSidebarContent = () => {
                 >
                     <FaUser className="inline mr-2" />
                     Profile
+                </NavLink>
+
+                {/* Profile Link */}
+                <NavLink
+                    to="/dashboard/userlogs"
+                    className={({ isActive }) =>
+                        isActive ? "text-blue-600" : "text-gray-600 hover:text-white"
+                    }
+                >
+                    <MdWorkHistory  className="inline mr-2" />
+                    Purchase History
                 </NavLink>
 
 
