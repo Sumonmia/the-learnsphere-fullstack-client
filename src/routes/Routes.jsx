@@ -20,6 +20,7 @@ import EditCourse from "../pages/dashboardpages/EditCourse";
 import AddCategory from "../pages/dashboardpages/AddCategory";
 import CourseCategoryCard from "../components/CourseCategoryCard";
 import UserPurchaseHistory from "../pages/dashboardpages/UserPurchaseHistory";
+import CategoryWiseCourses from "../pages/CategoryWiseCourses";
 
 const routes = createBrowserRouter([
   {
@@ -34,7 +35,11 @@ const routes = createBrowserRouter([
         path: "/courseCategories",
         element:
           <CourseCategoryCard></CourseCategoryCard>,
-        loader: () => fetch("http://localhost:5000/courseCategories"),
+        // loader: () => fetch("http://localhost:5000/courseCategories"),
+      },
+      {
+        path: "/courseCategories/:categoryId",
+        element: <CategoryWiseCourses></CategoryWiseCourses>,
       },
 
       {

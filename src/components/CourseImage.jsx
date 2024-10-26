@@ -1,7 +1,7 @@
 
 const CourseImage = () => {
   return (
-    <div className="bg-gray-300  mt-20 p-5 rounded-md">
+    <div className="bg-gray-300  mt-10 p-5 rounded-md">
       <h1 className="text-center text-2xl lg:text-4xl">Our Best Selling Courses</h1>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
         <div>

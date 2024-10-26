@@ -10,17 +10,15 @@ const AddCategory = () => {
 
         const form = new FormData(event.currentTarget);
 
-        const title = form.get("Set Title");
-        const category = form.get("category");
         const categoryId = form.get("categoryId");
-        const image = form.get("Set photo url");
-        const price = form.get("set price");
-        const rating = form.get("set rating");
+        const category = form.get("category");
+        const image = form.get("image");
 
-        const newCategory = { category, categoryId }
+
+        const newCategory = { categoryId, category, image }
         console.log(newCategory);
 
-        fetch("http://localhost:5000/courses",{
+        fetch("http://localhost:5000/courseCategories",{
 
             method: "POST",
             headers: {
@@ -52,6 +50,13 @@ const AddCategory = () => {
                             </label>
                             <input type="text" name="title" placeholder="JS Beginer Guide" className="input input-bordered" required />
                         </div> */}
+
+                        <div className="form-control flex flex-row justify-between">
+                            <label className="label" >
+                                <span className="label-text">Category Id: </span>
+                            </label>
+                            <input type="text" name="categoryId" placeholder="01" className="input input-bordered" required />
+                        </div>
                         <div className="form-control flex flex-row justify-between">
                             <label className="label" >
                                 <span className="label-text">Course Category: </span>
@@ -60,16 +65,10 @@ const AddCategory = () => {
                         </div>
                         <div className="form-control flex flex-row justify-between">
                             <label className="label" >
-                                <span className="label-text">Category Id: </span>
+                                <span className="label-text">Category Image URL: </span>
                             </label>
-                            <input type="text" name="categoryId" placeholder="01" className="input input-bordered" required />
+                            <input type="text" name="image" placeholder="Category Image URL" className="input input-bordered" required />
                         </div>
-                        {/* <div className="form-control flex flex-row justify-between">
-                            <label className="label" >
-                                <span className="label-text">Course Image URL: </span>
-                            </label>
-                            <input type="text" name="image" placeholder="Course Image URL" className="input input-bordered" required />
-                        </div> */}
                         {/* <div className="form-control flex flex-row justify-between">
                             <label className="label" >
                                 <span className="label-text">Course Price: </span>
