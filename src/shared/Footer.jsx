@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="mt-10">
                 <footer className="footer bg-gray-400 text-base-content p-10">
                     <aside>
-                        <Link to="/"><h3 className="text-2xl font-bold text-red-600 rounded-md">LearnSphere</h3></Link>
+                        <Link to="/"><h3 className=" text-2xl font-bold text-red-600 rounded-md">LearnSphere</h3></Link>
 
                         <p className="font-semibold">
                             Start Learning Today, <br />Shape Your Tomorrow

@@ -11,8 +11,6 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
 
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
-  const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
   const navigate = useNavigate();
   const location = useLocation();
   console.log("Location in the login page:", location);
@@ -38,6 +36,10 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error("You Don't have an Acoount! Please Register",{
+          position: "top-right",
+        })
+        navigate("/register");
       })
   }
 

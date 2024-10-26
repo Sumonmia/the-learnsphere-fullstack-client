@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -43,6 +44,9 @@ const AddaCourse = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>LS | Add a Course</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="card bg-slate-500 w-full max-w-md shrink-0 shadow-2xl">
                     <h1 className="text-center py-3 text-xl font-bold">Add a New Course</h1>

@@ -35,7 +35,6 @@ const routes = createBrowserRouter([
         path: "/courseCategories",
         element:
           <CourseCategoryCard></CourseCategoryCard>,
-        // loader: () => fetch("http://localhost:5000/courseCategories"),
       },
       {
         path: "/courseCategories/:categoryId",

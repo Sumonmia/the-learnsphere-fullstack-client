@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -39,18 +40,15 @@ const AddCategory = () => {
         })
     }
     return (
+        <>
+        <Helmet>
+            <title>LS | Add Category</title>
+        </Helmet>
         <div>
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="card bg-slate-500 w-full max-w-md shrink-0 shadow-2xl">
+                <div className="card bg-white">
                     <h1 className="text-center py-3 text-xl font-bold">Add a New CouCategory</h1>
                     <form onSubmit={handleAddCategory} className="card-body py-2">
-                        {/* <div className="form-control flex flex-row justify-between">
-                            <label className="label" >
-                                <span className="label-text">Course Title: </span>
-                            </label>
-                            <input type="text" name="title" placeholder="JS Beginer Guide" className="input input-bordered" required />
-                        </div> */}
-
                         <div className="form-control flex flex-row justify-between">
                             <label className="label" >
                                 <span className="label-text">Category Id: </span>
@@ -69,19 +67,6 @@ const AddCategory = () => {
                             </label>
                             <input type="text" name="image" placeholder="Category Image URL" className="input input-bordered" required />
                         </div>
-                        {/* <div className="form-control flex flex-row justify-between">
-                            <label className="label" >
-                                <span className="label-text">Course Price: </span>
-                            </label>
-                            <input type="text" name="price" placeholder="BDT..." className="input input-bordered" required />
-                        </div> */}
-                        {/* <div className="form-control flex flex-row justify-between">
-                            <label className="label" >
-                                <span className="label-text">Course Rating: </span>
-                            </label>
-                            <input type="text" name="rating" placeholder="4.9" className="input input-bordered" required />
-                        </div> */}
-
                         <div className="form-control items-center my-3">
                             <button className="btn w-40 ">Add Category</button>
                         </div>
@@ -91,6 +76,7 @@ const AddCategory = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

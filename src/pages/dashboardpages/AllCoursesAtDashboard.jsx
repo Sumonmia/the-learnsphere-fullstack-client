@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { FaEdit } from "react-icons/fa"
 import { FaDeleteLeft } from "react-icons/fa6"
@@ -35,11 +36,16 @@ const AllCoursesAtDashboard = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-between mb-5">
-        <h2 className="text-2xl font-bold mb-4">Total Courses: {courses.length}</h2>
-        <Link to="/dashboard/addacourse" className="btn "> Add a New Course</Link>
-      </div>
+    <>
+      <Helmet>
+        <title>LS | All Courses</title>
+      </Helmet>
+
+      <div className="container mx-auto p-4">
+        <div className="flex justify-between mb-5">
+          <h2 className="text-2xl font-bold mb-4">Total Courses: {courses.length}</h2>
+          <Link to="/dashboard/addacourse" className="btn "> Add a New Course</Link>
+        </div>
         <table className="min-w-full bg-gray-300 ">
           <thead>
             <tr className="bg-gray-200 text-gray-600 text-left">
@@ -96,7 +102,8 @@ const AllCoursesAtDashboard = () => {
           </tbody>
         </table>
 
-    </div>
+      </div>
+    </>
   )
 }
 

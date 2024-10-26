@@ -2,10 +2,16 @@ import React from 'react'
 import DashboardNavbar from '../dashboard/DashboardNavbar'
 import DashboardSidebarContent from '../dashboard/DashboardSidebarContent'
 import { Outlet } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 const DashboradLayout = () => {
   return (
     <>
+    <Helmet>
+      <title>
+        LS | Dashboard
+      </title>
+    </Helmet>
     <div>
       <DashboardNavbar></DashboardNavbar>
     </div>

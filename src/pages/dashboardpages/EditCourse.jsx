@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom"
 
@@ -44,8 +45,11 @@ const EditCourse = () => {
 
   return (
     <div>
+        <Helmet>
+            <title>LS | Edit Course</title>
+        </Helmet>
     <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="card bg-slate-500 w-full max-w-md shrink-0 shadow-2xl">
+        <div className="card bg-white">
             <h1 className="text-center py-3 text-xl font-bold">Edit this Course</h1>
             <form onSubmit={handleEditCourse} className="card-body py-2">
                 <div className="form-control flex flex-row justify-between">

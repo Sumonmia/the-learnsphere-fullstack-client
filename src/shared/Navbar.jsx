@@ -46,7 +46,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex gap-2 items-center">
-            <Link to="/"><img src="courses-img.jpg" className="rounded-full w-14" alt="logo" /></Link>
+            <Link to="/"><img src="courses-img.jpg" className="hidden md:block rounded-full w-14" alt="logo" /></Link>
             <span className="text-lg lg:text-2xl font-bold text-red-600">LearnSphere</span>
           </div>
         </div>

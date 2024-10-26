@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const UserPurchaseHistory = () => {
@@ -21,6 +22,12 @@ const UserPurchaseHistory = () => {
     } 
 
   return (
+    <>
+    <Helmet>
+        <title>
+            LS | User History
+        </title>
+    </Helmet>
     <div className="mt-10 bg-slate-400 rounded-md shadow-lg p-10">
         {
             loadedHistories.map((loadedHistory)=><div>
@@ -32,6 +39,7 @@ const UserPurchaseHistory = () => {
             </div>)
         }
     </div>
+    </>
   )
 }
 
