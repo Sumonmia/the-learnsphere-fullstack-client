@@ -27,7 +27,7 @@ const UserProfile = () => {
 
       // Make API call to update user information
       const response = await fetch(
-        `http://localhost:5000/userList/${user._id}`,
+        `https://the-learnsphere-server.vercel.app/userList/${user._id}`,
         {
           method: "PUT",
           headers: {

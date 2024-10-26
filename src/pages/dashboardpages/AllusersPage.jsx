@@ -22,7 +22,7 @@ const AllusersPage = () => {
   const fetchUsers = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/userList"
+        `https://the-learnsphere-server.vercel.app/userList`
       );
       const data = await response.json();
       setUsers(data);
@@ -39,11 +39,11 @@ const AllusersPage = () => {
   // Toggle admin status
   const handleToggleAdmin = async () => {
     try {
-      console.log({ selectedUser });
+      // console.log({ selectedUser });
       const updatedUser = { ...selectedUser, isAdmin: !selectedUser?.isAdmin };
 
       await fetch(
-        `http://localhost:5000/userList/${selectedUser._id}`,
+        `https://the-learnsphere-server.vercel.app/userList/${selectedUser._id}`,
         {
           method: "PUT",
           headers: {
@@ -83,7 +83,7 @@ const AllusersPage = () => {
       };
 
       await fetch(
-        `http://localhost:5000/userList/${selectedUser._id}`,
+        `https://the-learnsphere-server.vercel.app/userList/${selectedUser._id}`,
         {
           method: "PUT",
           headers: {

@@ -17,9 +17,9 @@ const AddCategory = () => {
 
 
         const newCategory = { categoryId, category, image }
-        console.log(newCategory);
+        // console.log(newCategory);
 
-        fetch("http://localhost:5000/courseCategories",{
+        fetch(`https://the-learnsphere-server.vercel.app/courseCategories`,{
 
             method: "POST",
             headers: {
@@ -29,7 +29,7 @@ const AddCategory = () => {
         })
         .then((res)=> res.json())
         .then((data)=>{
-            console.log(data);
+            // console.log(data);
             if(data.insertedId){
                 toast.success("Category Added successfully",{
                     position: "top-right",

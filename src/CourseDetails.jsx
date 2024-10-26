@@ -12,8 +12,8 @@ const CourseDetails = () => {
     const navigate = useNavigate();
     const courseDetails = useLoaderData();
     const { id } = useParams();
-    console.log(id);
-    console.log(user);
+    // console.log(id);
+    // console.log(user);
     // console.log(courseDetails);
     const { title, image, price, rating, category } = courseDetails;
 
@@ -38,11 +38,11 @@ const CourseDetails = () => {
                 price: formData.price,
               };
 
-              console.log("Logs is:", purchasedUser);
+              // console.log("Logs is:", purchasedUser);
         
               // Make API call to update user information
               const response = await fetch(
-                "http://localhost:5000/userlogs",
+                `https://the-learnsphere-server.vercel.app/userlogs`,
                 {
                   method: "POST",
                   headers: {

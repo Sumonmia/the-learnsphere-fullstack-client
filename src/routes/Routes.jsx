@@ -45,7 +45,7 @@ const routes = createBrowserRouter([
         path: "/courses",
         element:
           <AllCourses></AllCourses>,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () => fetch(`https://the-learnsphere-server.vercel.app/courses`),
       },
       {
         path: "/courses/:id",
@@ -54,7 +54,7 @@ const routes = createBrowserRouter([
             <CourseDetails></CourseDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
+        loader: ({ params }) => fetch(`https://the-learnsphere-server.vercel.app/course/${params.id}`),
       },
       {
         path: "/login",
@@ -81,7 +81,7 @@ const routes = createBrowserRouter([
       {
         path: "userlogs",
         element: <UserPurchaseHistory></UserPurchaseHistory>,
-        loader: ()=> fetch("http://localhost:5000/userlogs"),
+        loader: ()=> fetch(`https://the-learnsphere-server.vercel.app/userlogs`),
       },
       {
         path: "allusers",
@@ -95,17 +95,17 @@ const routes = createBrowserRouter([
       {
         path: "allcourses",
         element: <AllCoursesAtDashboard></AllCoursesAtDashboard>,
-        loader: ()=> fetch("http://localhost:5000/courses"),
+        loader: ()=> fetch(`https://the-learnsphere-server.vercel.app/courses`),
       },
       {
         path: "editcourse/:id",
         element: <EditCourse></EditCourse>,
-        loader: ({ params })=> fetch(`http://localhost:5000/course/${params.id}`),
+        loader: ({ params })=> fetch(`https://the-learnsphere-server.vercel.app/course/${params.id}`),
       },
       {
         path: "allcategories",
         element: <CourseCategories></CourseCategories>,
-        loader: ()=> fetch("http://localhost:5000/courseCategories"),
+        loader: ()=> fetch(`https://the-learnsphere-server.vercel.app/courseCategories`),
       },
       {
         path: "addcategory",

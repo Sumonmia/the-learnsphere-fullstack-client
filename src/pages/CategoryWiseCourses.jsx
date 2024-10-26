@@ -9,7 +9,7 @@ const CategoryWiseCourses = () => {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/courses/${categoryId}`)
+        fetch(`https://the-learnsphere-server.vercel.app/courses/${categoryId}`)
             .then((res) => res.json())
             .then((data) => setCourses(data))
             .catch((error) => console.error("Error loading courses:", error));

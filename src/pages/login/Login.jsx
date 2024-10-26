@@ -13,22 +13,22 @@ const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("Location in the login page:", location);
+  // console.log("Location in the login page:", location);
 
   const handleLogin = (event) => {
     event.preventDefault();
 
     const form = new FormData(event.currentTarget);
-    console.log(form);
+    // console.log(form);
 
     const email = form.get("email");
     const password = form.get("password");
 
-    console.log(email, password);
+    // console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         toast.success("User Login Successful", {
           position: "top-right",
         })

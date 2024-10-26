@@ -19,9 +19,9 @@ const AddaCourse = () => {
         const rating = form.get("rating");
 
         const course = { title, category, categoryId, image, price, rating }
-        console.log(course);
+        // console.log(course);
 
-        fetch("http://localhost:5000/courses",{
+        fetch(`https://the-learnsphere-server.vercel.app/courses`,{
 
             method: "POST",
             headers: {
@@ -31,7 +31,7 @@ const AddaCourse = () => {
         })
         .then((res)=> res.json())
         .then((data)=>{
-            console.log(data);
+            // console.log(data);
             if(data.insertedId){
                 toast.success("Course Added successfully",{
                     position: "top-right",

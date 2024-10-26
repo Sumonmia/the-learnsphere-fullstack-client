@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 
 const AllCourses = () => {
   const courses = useLoaderData();
-  console.log(courses);
+  // console.log(courses);
   return (
     <>
     <Helmet>

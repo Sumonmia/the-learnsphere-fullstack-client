@@ -15,10 +15,10 @@ const AuthProvider = ({children}) => {
         try{
 
             const userCredintial = await createUserWithEmailAndPassword(auth, email, password);
-            console.log("Test user: ", userCredintial.user);
+            // console.log("Test user: ", userCredintial.user);
             const newUser = userCredintial.user;
 
-        const response = await fetch("http://localhost:5000/userList",
+        const response = await fetch(`https://the-learnsphere-server.vercel.app/userList`,
             {
                 method: "POST",
                 headers: {
@@ -66,7 +66,7 @@ const AuthProvider = ({children}) => {
             if(currentUser){
                 try{
 
-                    const response = await fetch(`http://localhost:5000/userList/${currentUser.uid}`);
+                    const response = await fetch(`https://the-learnsphere-server.vercel.app/userList/${currentUser.uid}`);
 
                     if(! response.ok){
                         throw new error("Failed to Fetch");

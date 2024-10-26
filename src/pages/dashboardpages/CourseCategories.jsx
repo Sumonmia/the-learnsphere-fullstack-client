@@ -5,7 +5,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const CourseCategories = () => {
   const loadedCategories = useLoaderData();
   // const [courses, setCourses] = useState(loadedCourses);
-  console.log(loadedCategories);
+  // console.log(loadedCategories);
 
   return (
     <>

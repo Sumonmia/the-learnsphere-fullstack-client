@@ -6,7 +6,7 @@ import { useLoaderData, useNavigate } from "react-router-dom"
 const EditCourse = () => {
 
     const loadedCourse = useLoaderData();
-    console.log(loadedCourse);
+    // console.log(loadedCourse);
     const navigate = useNavigate();
 
     const handleEditCourse =(event)=>{
@@ -22,9 +22,9 @@ const EditCourse = () => {
         const rating = form.get("rating");
 
         const updatedCourse = { title, category, categoryId, image, price, rating }
-        console.log(updatedCourse);
+        // console.log(updatedCourse);
 
-        fetch(`http://localhost:5000/course/${loadedCourse._id}`, {
+        fetch(`https://the-learnsphere-server.vercel.app/course/${loadedCourse._id}`, {
             method: "PUT",
             headers: {
                 "content-type" : "application/json"
@@ -33,7 +33,7 @@ const EditCourse = () => {
         })
         .then((res)=> res.json())
         .then((data)=>{
-            console.log(data);
+            // console.log(data);
             if(data.modifiedCount){
                 toast.success("Course Updated Successfully", {
                     position: "top-right",

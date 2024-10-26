@@ -8,7 +8,7 @@ const CourseCategoryCard = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/courseCategories")
+        fetch(`https://the-learnsphere-server.vercel.app/courseCategories`)
             .then((res) => res.json())
             .then((data) => setCategories(data))
             .catch((error) => console.error("Error loading categories:", error));

@@ -15,13 +15,13 @@ const AllCoursesAtDashboard = () => {
   // delete course
   const handleDeleteCourse = (_id) => {
 
-    console.log(_id);
-    fetch(`http://localhost:5000/course/${_id}`, {
+    // console.log(_id);
+    fetch(`https://the-learnsphere-server.vercel.app/course/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
         if (data.deletedCount) {
           toast.success("You have Deleted a Course", {
