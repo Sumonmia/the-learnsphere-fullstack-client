@@ -15,14 +15,17 @@ const DashboradLayout = () => {
     <div>
       <DashboardNavbar></DashboardNavbar>
     </div>
-    <div className="block lg:flex bg-gray-500">
-      <div>
+    <div className='w-full'>
+    <div className="grid grid-cols-1 lg:grid-cols-4 bg-gray-500">
+      <div className='col-span-1'>
         <DashboardSidebarContent></DashboardSidebarContent>
       </div>
-      <div className='w-3/4 min-h-screen text-center pl-20'>
+      <div className='col-span-3 min-h-screen text-center px-5'>
         <Outlet />
       </div>
     </div>
+    </div>
+
     </>
   )
 }

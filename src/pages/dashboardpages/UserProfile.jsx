@@ -116,7 +116,7 @@ const UserProfile = () => {
         {/* Edit Modal */}
         {isEditModalOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg w-1/3">
+            <div className="bg-white p-6 rounded-lg w-4/5 lg:w-1/3">
               <h3 className="text-xl mb-4">Edit User</h3>
               <div className="mb-4">
                 <label className="block text-sm font-medium">Name:</label>

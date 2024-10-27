@@ -14,14 +14,14 @@ const CourseCategories = () => {
           LS | All Categories
         </title>
       </Helmet>
-      <div className="container mx-auto p-4">
-        <div className="flex justify-between mb-5">
-          <h2 className="text-2xl font-bold mb-4">Total Categories: {loadedCategories.length}</h2>
-          <Link to="/dashboard/addcategory" className="btn "> Add a New Category</Link>
+      <div className="flex flex-col justify-center items-center p-4">
+        <div className="flex space-x-6 items-center mb-5">
+          <h2 className="text-md lg:text-2xl font-bold mb-4">Total Categories: {loadedCategories.length}</h2>
+          <Link to="/dashboard/addcategory" className="btn text-sm lg:text-md"> Add a New Category</Link>
         </div>
-        <table className="min-w-full bg-gray-300 text-center">
+        <table className="table-auto bg-gray-300">
           <thead>
-            <tr className="bg-gray-200 text-gray-600 text-left">
+            <tr className="bg-gray-200 text-gray-600">
               <th className="py-2 px-4 border">#</th>
               <th className="py-2 px-4 border">Category Id</th>
               <th className="py-2 px-4 border">Category</th>

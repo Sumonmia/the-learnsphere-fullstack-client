@@ -113,69 +113,69 @@ const AllusersPage = () => {
       <Helmet>
         <title>LS | All Users</title>
       </Helmet>
-      <div className="container mx-auto p-4">
-        <h2 className="text-2xl font-bold mb-4">All Users: {users.length}</h2>
-
-        <div className="w-14 lg:min-w-full">
-          <table className="table-auto bg-gray-300 ">
-            <thead>
-              <tr className="bg-gray-200 text-gray-600 text-left">
-                <th className="py-2 px-4 border">#</th>
-                <th className="py-2 px-4 border">Name</th>
-                <th className="py-2 px-4 border">Email</th>
-                <th className="py-2 px-4 border">Image</th>
-                <th className="py-2 px-4 border">Role</th>
-                <th className="py-2 px-4 border">Status</th>
-                <th className="py-2 px-4 border">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user, index) => (
-                <tr key={user._id} className="hover:bg-gray-100">
-                  <td className="py-2 px-4 border">{index + 1}</td>
-                  <td className="py-2 px-4 border">{user?.displayName || "N/A"}</td>
-                  <td className="py-2 px-4 border">{user?.email}</td>
-                  <td className="py-2 px-4 border">
-                    <img
-                      src={user?.photoURL || "https://via.placeholder.com/50"}
-                      alt="user"
-                      className="w-10 rounded-full"
-                    />
-                  </td>
-                  <td className="py-2 px-4 border">
-                    {user.isAdmin ? "Admin" : "User"}
-                  </td>
-                  <td className="py-2 px-4 border text-green-500">
-                    Active
-                    {/* {user.isBlocked ? "Blocked" : "Active"} */}
-                  </td>
-                  <td className="py-2 px-4 border">
-                    <button
-                      onClick={() => handleClickedSetUserOrAdminRole(user)}
-                      className={`mr-2 p-2 rounded-full text-white ${user.isAdmin ? "bg-green-500" : "bg-blue-500"
-                        } ${user.email === "admin@gmail.com"
-                          ? "opacity-50 cursor-not-allowed"
-                          : ""
-                        }`}
-                      title="Toggle Admin/User"
-                      disabled={user.email === "admin@gmail.com"}
-                    >
-                      <FaUserShield />
-                    </button>
-
-                    <button
-                      onClick={() => openEditModal(user)}
-                      className="mr-2 p-2 rounded-full bg-yellow-500 text-white"
-                      title="Edit User"
-                    >
-                      <FaEdit />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div className="flex flex-col justify-center items-center p-4">
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Total Users: {users.length}</h2>
         </div>
+
+        <table className="table-auto bg-gray-300 ">
+          <thead>
+            <tr className="bg-gray-200 text-gray-600 text-center text-sm">
+              <th className="py-2 lg:px-4 border">#</th>
+              <th className="py-2 lg:px-4 border">Name</th>
+              <th className="py-2 lg:px-4 border">Email</th>
+              <th className="py-2 lg:px-4 border">Image</th>
+              <th className="py-2 lg:px-4 border">Role</th>
+              <th className="py-2 lg:px-4 border">Status</th>
+              <th className="py-2 lg:px-4 border">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={user._id} className="hover:bg-gray-100">
+                <td className="py-2 lg:px-4 border">{index + 1}</td>
+                <td className="py-2 lg:px-4 border">{user?.displayName || "N/A"}</td>
+                <td className="py-2 lg:px-4 border">{user?.email}</td>
+                <td className="py-2 lg:px-4 border">
+                  <img
+                    src={user?.photoURL || "https://via.placeholder.com/50"}
+                    alt="user"
+                    className="w-10 rounded-full"
+                  />
+                </td>
+                <td className="py-2 px-4 border">
+                  {user.isAdmin ? "Admin" : "User"}
+                </td>
+                <td className="py-2 lg:px-4 border text-green-500">
+                  Active
+                  {/* {user.isBlocked ? "Blocked" : "Active"} */}
+                </td>
+                <td className="py-2 lg:px-4 border">
+                  <button
+                    onClick={() => handleClickedSetUserOrAdminRole(user)}
+                    className={`mr-2 p-2 rounded-full text-white ${user.isAdmin ? "bg-green-500" : "bg-blue-500"
+                      } ${user.email === "admin@gmail.com"
+                        ? "opacity-50 cursor-not-allowed"
+                        : ""
+                      }`}
+                    title="Toggle Admin/User"
+                    disabled={user.email === "admin@gmail.com"}
+                  >
+                    <FaUserShield />
+                  </button>
+
+                  <button
+                    onClick={() => openEditModal(user)}
+                    className="mr-2 p-2 rounded-full bg-yellow-500 text-white"
+                    title="Edit User"
+                  >
+                    <FaEdit />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
 
         {/* Edit Modal */}
